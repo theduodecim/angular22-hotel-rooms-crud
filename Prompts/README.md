@@ -19,6 +19,5 @@ Esta carpeta documenta el primer punto (los prompts). El resultado del tercer y 
 | `02-signal-forms-httpresource.md` | Migración a `httpResource` y Signal Forms (Angular 22) |
 | `03-native-federation.md` | Arquitectura de microfrontends: shell + remote |
 | `04-testing-vitest.md` | Setup de testing (Vitest) y tests unitarios |
-| `05-ui-tailwind.md` | Pulido de UI con Tailwind CSS |
 
 Cada archivo contiene el prompt final tal como se le mandó al agente para esa etapa — no el historial completo de idas y vueltas de la conversación previa a llegar a ese texto.
