@@ -7,10 +7,10 @@ async function importNativeFederation() {
 (async () => {
   try {
     const federation = await importNativeFederation();
-    await federation.initFederation('/federation.manifest.json');
+    await federation.initFederation();
   } catch (error) {
     console.warn(
-      'Native Federation no pudo inicializarse; el CRUD local seguirá disponible.',
+      'Native Federation no pudo inicializarse en rooms-remote; se inicia standalone.',
       error,
     );
   }

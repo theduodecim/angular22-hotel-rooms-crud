@@ -1,0 +1,84 @@
+<form
+  class="space-y-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+  (submit)="submitForm(); $event.preventDefault()"
+>
+  <div class="flex items-center justify-between gap-4">
+    <h2 class="text-lg font-semibold text-slate-900">{{ title() }}</h2>
+    <button
+      type="button"
+      class="text-sm font-medium text-slate-500 hover:text-slate-900"
+      (click)="cancelled.emit()"
+    >
+      Cerrar
+    </button>
+  </div>
+
+  <label class="block text-sm font-medium text-slate-700">
+    Nombre
+    <input
+      class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 outline-none focus:border-sky-500"
+      [formField]="roomForm.name"
+      placeholder="Habitación 401"
+    />
+  </label>
+  @if (roomForm.name().touched() && roomForm.name().invalid()) {
+    <p class="text-sm text-red-600">El nombre es obligatorio.</p>
+  }
+
+  <label class="block text-sm font-medium text-slate-700">
+    Tipo
+    <select
+      class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+      [formField]="roomForm.type"
+    >
+      <option value="">Selecciona un tipo</option>
+      @for (type of roomTypes; track type) {
+        <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </label>
+  @if (roomForm.type().touched() && roomForm.type().invalid()) {
+    <p class="text-sm text-red-600">El tipo es obligatorio.</p>
+  }
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="block text-sm font-medium text-slate-700">
+      Precio
+      <input
+        class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+        type="number"
+        [formField]="roomForm.price"
+      />
+    </label>
+    <label class="block text-sm font-medium text-slate-700">
+      Capacidad
+      <input
+        class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+        type="number"
+        [formField]="roomForm.capacity"
+      />
+    </label>
+  </div>
+  @if (
+    (roomForm.price().touched() && roomForm.price().invalid()) ||
+    (roomForm.capacity().touched() && roomForm.capacity().invalid())
+  ) {
+    <p class="text-sm text-red-600">Precio y capacidad deben ser mayores que 0.</p>
+  }
+
+  <label class="flex items-center gap-2 text-sm font-medium text-slate-700">
+    <input
+      type="checkbox"
+      class="h-4 w-4 rounded border-slate-300"
+      [formField]="roomForm.available"
+    />
+    Disponible
+  </label>
+
+  <button
+    type="submit"
+    class="rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
+  >
+    Guardar habitación
+  </button>
+</form>

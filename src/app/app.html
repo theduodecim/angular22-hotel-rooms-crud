@@ -1,7 +1,13 @@
 <div class="min-h-screen bg-slate-50 text-slate-900">
   <header class="border-b border-slate-200 bg-white px-6 py-4 shadow-sm">
     <h1 class="text-xl font-semibold">{{ title() }}</h1>
-    <p class="text-sm text-slate-500">Angular 22 Signals + httpResource + Signal Forms</p>
+    <p class="text-sm text-slate-500">
+      Angular 22 Signals + httpResource + Signal Forms + Native Federation Shell
+    </p>
+    <nav class="mt-3 flex gap-4 text-sm font-medium text-blue-700">
+      <a routerLink="/">CRUD local</a>
+      <a routerLink="/rooms-remote">CRUD desde rooms-remote</a>
+    </nav>
   </header>
 
   <main class="mx-auto max-w-5xl px-6 py-8">
