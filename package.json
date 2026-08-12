@@ -38,6 +38,8 @@
     "typescript": "~6.0.2",
     "@angular-architects/native-federation": "^22.1.0",
     "concurrently": "^9.2.1",
-    "@softarc/native-federation-orchestrator": "^4.6.0"
+    "@softarc/native-federation-orchestrator": "^4.6.0",
+    "jsdom": "^30.0.1",
+    "vitest": "^4.0.8"
   }
 }
