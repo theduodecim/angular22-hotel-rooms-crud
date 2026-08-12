@@ -7,4 +7,5 @@ export interface Room {
   price: number;
   capacity: number;
   available: boolean;
+  isSeed?: boolean;
 }
