@@ -124,7 +124,9 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "tsconfig.spec.json"
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "hotel-crud-shell:esbuild:development",
+            "runner": "vitest"
           }
         }
       }
@@ -246,7 +248,9 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/rooms-remote/tsconfig.spec.json"
+            "tsConfig": "projects/rooms-remote/tsconfig.spec.json",
+            "buildTarget": "rooms-remote:esbuild:development",
+            "runner": "vitest"
           }
         }
       }
