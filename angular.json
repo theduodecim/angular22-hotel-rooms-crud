@@ -120,6 +120,12 @@
           "options": {
             "port": 4200
           }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json"
+          }
         }
       }
     },
@@ -235,6 +241,12 @@
           "defaultConfiguration": "development",
           "options": {
             "port": 4201
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/rooms-remote/tsconfig.spec.json"
           }
         }
       }
